@@ -1,19 +1,19 @@
-import './App.css'
-import Ad from './components/Ad'
-import { TetrisGame } from './components/TetrisGame'
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes
+} from "react-router-dom"
+import HomePage from './pages/home'
+import AboutPage from './pages/about'
 
 function App () {
   return (
-    <>
-      <main>
-        <h1 className="title">TETRIS</h1>
-        <TetrisGame />
-        <Ad />
-      </main>
-      <footer>
-        <small>You can check out the code <a href='https://github.com/jozedev/tetris-react' target='_blank' rel="noreferrer">here</a>.</small>
-      </footer>
-    </>
+    <Router basename='/'>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<AboutPage />} />
+      </Routes>
+    </Router>
   )
 }
 
